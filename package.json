@@ -1,0 +1,21 @@
+{
+  "name": "epr001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url epr-sass/mystyles.scss epr-styles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.3.1",
+    "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.11.1"
+  }
+}

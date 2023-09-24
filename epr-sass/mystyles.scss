@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400&display=swap');
+//font-family: 'Roboto Slab', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
+//font-family: 'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+//font-family: 'Courier Prime', monospace;
+
+
+//Custom fonts:
+$font-size-base: 1.1rem;
+$font-family-base: 'Roboto Slab', sans-serif;
+$font-family-monospace:       'Courier Prime', monospace;
+// $headings-font-family: 'Courier Prime', monospace;
+$headings-font-family: 'Raleway', sans-serif;
+$headings-color: #b83d0d;
+
+
+//Body 
+$body-color: #3c3c3c;
+
+//Links
+$link-color:                              #b83d0d;
+$link-decoration:                         none;
+$link-shade-percentage:                   20% !default;
+$link-hover-color: #b83d0d;
+//$link-hover-decoration:                   underline !default;
+
+
+
+//Custom vars
+$btn-focus-width: 2px;
+$navbar-toggler-border-radius:2px;
+$navbar-toggler-padding-y:          .2rem;
+$navbar-toggler-padding-x:          .2rem;
+
+//Custom spacers.
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+);
+
+
+//Import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+//Import bootstrap-icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+
+//Header styles
+.epr-header-bg {
+  background-image: url('assets/images/header-background-576x192.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+  h1 {
+    color: #ffffff!important;
+  }
+}
+
+//Header breakpoints
+@include media-breakpoint-up(lg) {
+  .epr-header-bg {
+    background-image: url('assets/images/header-background-992x331.png');
+    height: 200px;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .epr-header-bg {
+    background-image: url('assets/images/header-background-1200x400.png');
+    height: 250px;
+    h1 {
+      color: #b83d0d!important;
+    }
+  }
+}
+
+
+//Custom navbar
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler-icon {
+    background-image: none;
+    border: none;
+  }
+.navbar i {
+  color: #b83d0d;
+}
+
+button.navbar-toggler{
+  color: #b83d0d;
+}
+
+
+//Paragraphs.
+.subhead::first-letter{
+  initial-letter: 2;
+  color: #b83d0d;
+  margin-right: 0.5rem;
+}
+
+.post-sub-header p::first-letter{
+  initial-letter: 2;
+  color: #b83d0d;
+  margin-right: 0.5rem;
+}
+
+.epr-post p {
+  margin-bottom: 2rem!important;
+}
+
+.epr-active{
+  color: #b83d0d;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+//Code blocks.
+pre {
+  border-left: 4px solid #b35834;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;;
+}
+
+
+// div {
+//     border: 1px solid grey !important;
+//   }
