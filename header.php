@@ -42,18 +42,10 @@
               <?php
               // Select our menu
               $menu = my_menu_builder('main-menu');
-            
+              my_console_log('hola');
+              my_console_log('Menu: ' . json_encode($menu, JSON_PRETTY_PRINT));
               foreach ($menu as $item) :
-                //Set class names if the menu item is active
-                //$menu_item_active_class = get_the_ID() == $item['ID'] ? "epr-active " : "nav-link";
-                //$sub_menu_item_active_class = get_the_ID() == $item['ID'] ? "epr-active" : "nav-link";
-                
-                
-                // $menu_item_active_class = (get_the_ID() == $item['ID']) || (get_option( 'page_for_posts') == $item['ID']) ? "epr-active " : "nav-link";
-                // if ($item['ID'] == get_option( 'page_for_posts')) {
-                //   $menu_item_active_class = "epr-active";
-                // } 
-                
+                my_console_log('Item: ' . '<pre>' . $item . '</pre>');
                 $menu_item_active_class = "";
                 if ( is_home()){
                   if (get_option( 'page_for_posts') == $item['ID']) {
@@ -65,15 +57,11 @@
                 }
 
 
-
-                //my_console_log('title -> id: ' . $item['ID']);
-                //my_console_log('get_the_ID(): ' .get_the_ID());
-                //my_console_log('Es el blog?: ' . is_home());
-                //my_console_log('title: '. $item['title']);
-                //my_console_log($menu_item_active_class);
                 
                 //Menu item has children
-                if (isset($item['children'])) : ?>
+                if (isset($item['children'])) : 
+                ?>
+
                   <!-- <li class="nav-item dropdown"> -->
                   <li class="nav-item dropup">
                     <a  class="nav-link dropdown-toggle <?php echo ($menu_item_active_class) ?>" href="<?= $item['url'] ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,7 +74,8 @@
                     </ul>
                   </li>
 
-                <?php else: ?>
+                <?php else: 
+                  ?>
                   <li class="nav-item">
                     <!-- <a class="nav-link" href='<?= $item['url'] ?>'><?= $item['title']; ?></a> -->
                     
